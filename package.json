@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register ./src/tests/*$NAME*.{test,spec}.ts -t 10000 --exit",
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "nodemon  src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,8 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.6.0",
+    "eslint": "^8.49.0",
+    "nodemon": "^3.0.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
   }

@@ -1,4 +1,3 @@
-import { ServiceResponse } from "../types/serviceResponse";
 import { IEmployeeModel } from '../interfaces/employee/IEmployeeModel'
 import { IEmployee } from "../interfaces/employee/IEmployee";
 import { prisma } from "../database/prismaClient";

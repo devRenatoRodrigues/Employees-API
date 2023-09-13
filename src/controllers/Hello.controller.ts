@@ -7,7 +7,7 @@ export default class HelloController {
         private _helloService = new HelloService(),
     ) { }
 
-    public async login(_req: Request, res: Response): Promise<Response> {
+    public async helloMessage(_req: Request, res: Response): Promise<Response> {
         const serviceResponse = await this._helloService.helloMessage()
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
     }

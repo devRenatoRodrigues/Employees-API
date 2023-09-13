@@ -1,4 +1,4 @@
-type ID = string;
+type ID = number;
 
 type Identifiable = { id: ID };
 

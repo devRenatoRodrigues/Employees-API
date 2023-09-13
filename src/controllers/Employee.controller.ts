@@ -15,14 +15,14 @@ export default class EmployeeController {
 
     async findByPk(req: Request, res: Response): Promise<Response> {
         const { id } = req.params
-        const serviceResponse = await this._employeeService.findByPk(id)
+        const serviceResponse = await this._employeeService.findByPk(Number(id))
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
     }
 
     async update(req: Request, res: Response): Promise<Response> {
         const { id } = req.params;
         const data = req.body;
-        const serviceResponse = await this._employeeService.update(id, data)
+        const serviceResponse = await this._employeeService.update(Number(id), data)
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
     }
 
@@ -34,7 +34,7 @@ export default class EmployeeController {
 
     async delete(req: Request, res: Response): Promise<Response>  {
         const { id } = req.params;
-        const serviceResponse = await this._employeeService.delete(id)
+        const serviceResponse = await this._employeeService.delete(Number(id))
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
 
     }

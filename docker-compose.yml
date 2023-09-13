@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+
+  backend:
+
+    build: .
+
+    container_name: cogum-test
+
+    restart: always
+
+    tty: true
+
+    stdin_open: true
+
+    volumes:
+
+      - ./src:/app/src
+
+    ports:
+
+      - 3000:3000
+
+    environment:
+      PORT: 3000
+      MYSQL_HOSTNAME: db
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: CogumDB
+      DATABASE_URL: mysql://root:password@db:3306/CogumDB
+
+  db:
+    container_name: cogum_db
+    image: mysql:8.0.32
+    restart: always
+    ports:
+
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: CogumDB
+    volumes:
+      - ./database-event:/var/lib/mysql
+
+networks:
+  default:
+    name: cogum_net

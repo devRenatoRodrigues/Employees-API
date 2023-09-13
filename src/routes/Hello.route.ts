@@ -8,7 +8,7 @@ const router = Router();
 
 router.get(
   '/',
-  (req:Request, res:Response) => helloController.login(req, res),
+  (req:Request, res:Response) => helloController.helloMessage(req, res),
 );
 
 export default router;

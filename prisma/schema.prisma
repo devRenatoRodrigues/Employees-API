@@ -10,10 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Employees {
- id String  @id @default(auto()) @map("_id") @db.ObjectId
- name String 
- role Role @default(EMPLOYEE)
+model Employee {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  role Role   @default(EMPLOYEE)
+
+  @@map("employees")
 }
 
 enum Role {

@@ -1,6 +1,14 @@
+type ServiceResponseErrorType = 'INVALID_DATA' | 'NOT_FOUND';
 export type ServiceMessage = { message: string };
 
-export type ServiceResponse = {
+export type ServiceResponseError = {
+  status: ServiceResponseErrorType,
+  data: ServiceMessage
+};
+
+export type ServiceResponseSuccess<T> = {
     status: 'SUCCESSFUL',
-    data: ServiceMessage
+    data: T | ServiceMessage
   };
+
+  export type ServiceResponse<T> = ServiceResponseError | ServiceResponseSuccess<T>;

@@ -5,8 +5,11 @@ export interface ICRUDModelCreator<T> {
   create(data: NewEntity<T>): Promise<T | null>,
 }
 
-export interface ICRUDModelRead<T> {
+export interface ICRUDModelReadAll<T> {
   findAll(): Promise<T[]>,
+}
+
+export interface ICRUDModelReadOne<T> {
   findByPk(id: ID): Promise<T | null>,
 }
 
@@ -19,6 +22,6 @@ export interface ICRUDModelDelete {
 }
 
 export interface ICRUDModel<T>
-  extends ICRUDModelRead<T>, ICRUDModelUpdate<T>, ICRUDModelCreator<T>,
-  ICRUDModelDelete { }
+  extends ICRUDModelReadAll<T>, ICRUDModelUpdate<T>, ICRUDModelCreator<T>,
+  ICRUDModelDelete, ICRUDModelReadOne<T> { }
 

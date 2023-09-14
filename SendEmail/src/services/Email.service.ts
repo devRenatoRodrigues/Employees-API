@@ -1,5 +1,4 @@
 import { IEmail } from "../interfaces/IEmail";
-import EmailModel from "../models/Email.model";
 import { ServiceResponse } from "../interfaces/serviceResponse";
 import getEmployeesByIds from "../APIs/getEmployeesByIds";
 

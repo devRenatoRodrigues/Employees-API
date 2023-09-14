@@ -14,7 +14,6 @@ class App {
 
   private config():void {
     this.app.use(express.json());
-
   }
 
   private routes(): void {

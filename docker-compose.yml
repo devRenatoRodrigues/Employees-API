@@ -3,25 +3,15 @@ version: "3"
 services:
 
   backend:
-
-    build: .
-
+    build: ./Employees
     container_name: cogum-test
-
     restart: always
-
     tty: true
-
     stdin_open: true
-
     volumes:
-
-      - ./src:/app/src
-
+      - ./Employees/src:/app/src
     ports:
-
       - 3000:3000
-
     environment:
       PORT: 3000
       MYSQL_HOSTNAME: db
@@ -36,13 +26,33 @@ services:
     image: mysql:8.0.32
     restart: always
     ports:
-
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: CogumDB
     volumes:
       - ./database-event:/var/lib/mysql
+
+  microservice:
+    build: ./SendEmail
+    container_name: send-email
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./SendEmail/src:/app/src
+    ports:
+      - 3001:3001
+    environment:
+      PORT: 3001
+      MYSQL_HOSTNAME: db
+      MYSQL_PORT: 3307
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: SendEmailDB
+      DATABASE_URL: mysql://root:password@microdb:3307/SendEmailDB
+
+
 
 networks:
   default:

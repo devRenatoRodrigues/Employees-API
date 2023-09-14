@@ -1,10 +1,9 @@
 import { Request, Response } from 'express';
 import mapStatusHTTP from "../utils/mapStatusHTTP.utils";
-import EmployeeService from "../services/Employee.service";
 import PopulateService from '../services/Populate.service';
 
 
-export default class EmployeeController {
+export default class PopulateController {
     constructor(
         private _populateService = new PopulateService(),
     ) { }

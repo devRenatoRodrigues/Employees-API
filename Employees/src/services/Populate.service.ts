@@ -15,7 +15,6 @@ export default class PopulateService {
         await prisma.employee.createMany({ data: newEmployees });
         const allEmployees = await this._employeeModel.findAll()
 
-
         const lastEmployeesCreated = allEmployees.filter((employee) => {
             const currentTime = new Date().getTime();
             const createdAt = new Date(employee.createdAt).getTime();

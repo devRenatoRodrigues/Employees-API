@@ -3,7 +3,7 @@ import { getRedis, setRedis } from "../redisConfig";
 
 export default async function getEmployeesByIds(ids: number[]) {
     try {
-        const promises = ids.map(async (id) => {
+        const promises = ids!.map(async (id) => {
             const employeeRedis = await getRedis(`employee-${id}`);
 
             if (employeeRedis) {

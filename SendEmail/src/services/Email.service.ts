@@ -8,10 +8,10 @@ export default class EmailService {
 
     async sendEmailToAllEmployees(ids: IEmail['id'][], message: string): Promise<ServiceResponse<string>> {
 
-        const emails = await getEmployeesByIds(ids)
+        const emails = await getEmployeesByIds(ids);
 
         emails.map(async (email) => {
-            sendNotificationCounter()
+            sendNotificationCounter();
             console.log(`Send message: ${message} to e-mail: ${email}`);
 
         });

@@ -8,7 +8,7 @@ const router = Router();
 
 router.get(
   '/',
-  (req:Request, res:Response) => populateController.populateEmployees(req, res),
+  (req: Request, res: Response) => populateController.populateEmployees(req, res),
 );
 
 export default router;

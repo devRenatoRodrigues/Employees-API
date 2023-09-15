@@ -24,9 +24,9 @@ export default class PopulateService {
         const lastEmployeesCreated = allEmployees.filter((employee) => {
             const currentTime = new Date().getTime();
             const createdAt = new Date(employee.createdAt).getTime();
-            const timeLimit = 1000
+            const timeLimit = 1000;
             const timeDifference = currentTime - createdAt;
-            return timeDifference <= timeLimit
+            return timeDifference <= timeLimit;
         })
 
         return { status: 'SUCCESSFUL', data: lastEmployeesCreated };

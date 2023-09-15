@@ -9,7 +9,7 @@ export default class PopulateController {
     ) { }
 
     async populateEmployees(_req: Request, res: Response): Promise<Response> {
-        const serviceResponse = await this._populateService.populateEmployees()
+        const serviceResponse = await this._populateService.populateEmployees();
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
-    }
-}
+    };
+};

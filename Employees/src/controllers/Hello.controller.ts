@@ -8,8 +8,8 @@ export default class HelloController {
     ) { }
 
     public async helloMessage(_req: Request, res: Response): Promise<Response> {
-        const serviceResponse = await this._helloService.helloMessage()
+        const serviceResponse = await this._helloService.helloMessage();
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
-    }
+    };
 
-}
+};

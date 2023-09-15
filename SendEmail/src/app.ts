@@ -12,7 +12,7 @@ class App {
     this.routes();
   }
 
-  private config():void {
+  private config(): void {
     this.app.use(express.json());
   }
 

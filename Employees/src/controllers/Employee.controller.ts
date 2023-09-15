@@ -32,7 +32,7 @@ export default class EmployeeController {
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
     }
 
-    async delete(req: Request, res: Response): Promise<Response>  {
+    async delete(req: Request, res: Response): Promise<Response> {
         const { id } = req.params;
         const serviceResponse = await this._employeeService.delete(Number(id))
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);

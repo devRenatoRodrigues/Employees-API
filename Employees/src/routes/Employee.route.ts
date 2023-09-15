@@ -21,7 +21,6 @@ router.get(
     (req:Request, res:Response) => employeeController.create(req, res),
   );
 
-
   router.patch(
     '/:id',
     (req:Request, res:Response) => employeeController.update(req, res),

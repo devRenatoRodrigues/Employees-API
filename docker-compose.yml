@@ -1,5 +1,6 @@
 version: "3"
 
+
 services:
 
   backend:
@@ -33,21 +34,54 @@ services:
     volumes:
       - ./database-event:/var/lib/mysql
 
-  microservice:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    ports:
+      - 9080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  microservice01:
     build: ./SendEmail
-    container_name: send-email
+    container_name: send-email-01
     restart: always
     tty: true
     stdin_open: true
     volumes:
       - ./SendEmail/src:/app/src
     ports:
-      - 3001:3001
-    environment:
-      PORT: 3001
+      - 3001:80
+      
+  microservice02:
+    build: ./SendEmail
+    container_name: send-email-02
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./SendEmail/src:/app/src
+    ports:
+      - 3002:80
+
+  microservice03:
+    build: ./SendEmail
+    container_name: send-email-03
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./SendEmail/src:/app/src
+    ports:
+      - 3003:80
+
+
 
 
 
 networks:
   default:
     name: cogum_net
+  cogum_net:
+    driver: bridge

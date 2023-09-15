@@ -41,7 +41,7 @@ Para popular o banco de dados vá até a rota GET /populate
 
 ![Rota populate](imagens/PopulateRoute.png)
 
-ou crie uma através da rota POST /employees
+ou crie um novo Employee através da rota POST /employees
 
 ![Rota create](imagens/CreateRoute.png)
 

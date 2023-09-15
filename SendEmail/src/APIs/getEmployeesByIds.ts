@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getRedis } from "../redisConfig";
+import { getRedis, setRedis } from "../redisConfig";
 
 export default async function getEmployeesByIds(ids: number[]) {
     try {
@@ -10,6 +10,7 @@ export default async function getEmployeesByIds(ids: number[]) {
                 return JSON.parse(employeeRedis);
             } else {
                 const response = await axios.get(`http://backend:3000/employee/${id}`);
+                setRedis(`employee-${response.data.id}`, JSON.stringify(response.data))
                 return response.data;
             }
         })

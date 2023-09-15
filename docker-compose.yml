@@ -13,6 +13,7 @@ services:
       - ./Employees/src:/app/src
     ports:
       - 3000:3000
+      - 3030:3030
     environment:
       PORT: 3000
       MYSQL_HOSTNAME: db

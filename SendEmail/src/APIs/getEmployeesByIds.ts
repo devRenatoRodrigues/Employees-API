@@ -9,7 +9,7 @@ export default async function getEmployeesByIds(ids: number[]) {
             if (employeeRedis) {
                 return JSON.parse(employeeRedis);
             } else {
-                const response = await axios.get(`http://backend:3000/employee/${id}`);
+                const response = await axios.get(`http://backend:3000/employees/${id}`);
                 setRedis(`employee-${response.data.id}`, JSON.stringify(response.data))
                 return response.data;
             }

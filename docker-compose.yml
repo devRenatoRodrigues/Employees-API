@@ -22,6 +22,8 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: CogumDB
       DATABASE_URL: mysql://root:password@db:3306/CogumDB
+    networks:
+      - cogum_net
 
   db:
     container_name: cogum_db
@@ -34,6 +36,8 @@ services:
       MYSQL_DATABASE: CogumDB
     volumes:
       - ./database-event:/var/lib/mysql
+    networks:
+      - cogum_net
 
   nginx:
     image: nginx:alpine

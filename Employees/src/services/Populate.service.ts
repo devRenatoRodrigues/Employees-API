@@ -3,6 +3,7 @@ import { IEmployee } from "../interfaces/employee/IEmployee";
 import EmployeeModel from "../models/Employee.model";
 import getRandomEmployees from "../APis/getRandomEmployees";
 import { prisma } from "../database/prismaClient";
+import { setRedis } from "../redisConfig";
 
 
 export default class PopulateService {
@@ -12,8 +13,13 @@ export default class PopulateService {
 
     async populateEmployees(): Promise<ServiceResponse<IEmployee[]>> {
         const newEmployees = await getRandomEmployees()
+
         await prisma.employee.createMany({ data: newEmployees });
-        const allEmployees = await this._employeeModel.findAll()
+        const allEmployees = await this._employeeModel.findAll();
+
+        allEmployees.forEach((employee) => {
+            setRedis(`employee-${employee.id}`, JSON.stringify(employee))
+        })
 
         const lastEmployeesCreated = allEmployees.filter((employee) => {
             const currentTime = new Date().getTime();

@@ -46,6 +46,16 @@ Após instalar as dependencias retorne ao diretorio raiz e suba os containers
   docker-compose up -d --build 
 ```
 
+Após subir os contâiners use o arquivo .env.example como referencia e crie o seu arquivo .env
+
+após isso entre na pasta Employees e utilize o comando
+ ```bash
+  npx prisma migrate dev 
+```
+e digite y 
+
+após isso a aplicação já deve estar rodando
+
 ## Operações Basicas <a name="op-basicas"></a>
 
 Para popular o banco de dados vá até a rota GET /populate
@@ -84,7 +94,7 @@ a quantitade total que uma rota foi acessada e também a quantidade de notifica�
 ## Decisões de design <a name="desing"></a>
 Optei pelo Prisma por ser um ORM de facil manipulação e também porque era possivel utilizar com MongoDB e no final se revelou a melhor escolha porque eu tive que migrar do MongoDB para o MySQL.
 
-Tive alguns percalsio na escolha de banco de dados inicialmente optei pelo MongoDb mas após algumas pesquisas percebi que não foi uma boa escolha, e migrei pro MySQL por fazer mais sentido pela conscistencia dos dados, e também porque me fornecia um ID autoincrementado e não um aleatorio como fazia o MongoDb.
+Tive alguns percalços na escolha de banco de dados inicialmente optei pelo MongoDb mas após algumas pesquisas percebi que não foi uma boa escolha, e migrei pro MySQL por fazer mais sentido pela conscistencia dos dados, e também porque me fornecia um ID autoincrementado e não um aleatorio como fazia o MongoDb.
 
 A comunicação entre o serviço e o microserviço é feita através do Axios que acabou fazendo mais sentido para mim por ser uma comunicação simples e pouco complexa mas houve momentos em que considerei o kafka mas por não dominar a tecnologia e pelo tempo que tinha disponivel o Axios acabou se tornando uma opção mais obvia
 

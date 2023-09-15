@@ -47,7 +47,7 @@ Após instalar as dependencias retorne ao diretorio raiz e suba os containers
 ```
 
 Após subir os contâiners use o arquivo .env.example como referencia e crie o seu arquivo .env
-
+aguarde alguns segundo até o banco de dados subir em torno de 1 a 3 minutos
 após isso entre na pasta Employees e utilize o comando
  ```bash
   npx prisma migrate dev 

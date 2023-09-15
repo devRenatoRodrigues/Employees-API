@@ -9,7 +9,7 @@ export default class EmployeeModel implements IEmployeeModel {
     async findAll(): Promise<IEmployee[]> {
         const allEmployees = await prisma.employee.findMany();
 
-        allEmployees.forEach((employee) => {
+        allEmployees.forEach((employee: IEmployee) => {
             setRedis(`employee-${employee.id}`, JSON.stringify(employee))
         })
 

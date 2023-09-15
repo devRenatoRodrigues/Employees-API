@@ -7,7 +7,7 @@ const router = Router();
 
 router.use('/hello', helloRouter);
 
-router.use('/employee', employeeRouter);
+router.use('/employees', employeeRouter);
 
 router.use('/populate', populateRouter);
 

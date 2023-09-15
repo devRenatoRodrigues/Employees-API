@@ -56,13 +56,12 @@ Se um servidor estiver carregado a requisição é realizada em outro servidor q
 
 ![Load Balancer](imagens/LoadBalancer.png)
 
-A aplicação possue o Redis que diminui consideravelmente o tempo de resposta da aplicação armazenando em cache as informações frenquentemente acessadas
+A aplicação possui o Redis que diminui consideravelmente o tempo de resposta da aplicação armazenando em cache as informações frenquentemente acessadas
 
 ![Redis](imagens/Redis.png)
 
-e por último ela também possue um gerenciador de metricas 
+e por último ela também possui um gerenciador de métricas 
 Acessado pela porta 3030 /metrics
-
 lá é possivel vizualizar a duração da requisição em cada rota 
 
 ![Entrypoint response time](imagens/entrypointResponseTime.png)

@@ -1,13 +1,13 @@
 
 # API Employees
 
-[Ir para Decisões de Design](#instalacao)
+[Instalação](#instalacao)
 
-[Ir para Decisões de Design](#op-basicas)
+[Operações Básicas](#op-basicas)
 
-[Ir para Decisões de Design](#demo-func)
+[Demonstração de Funcionalidades](#demo-func)
 
-[Ir para Decisões de Design](#desing)
+[Decisões de Design](#desing)
 
 ## Sobre
 

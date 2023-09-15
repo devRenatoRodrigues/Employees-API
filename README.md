@@ -13,6 +13,14 @@
 
 **Send Notification:** Envia notificação com uma mensagem personalizada para uma lista de emails fornecida pelo usuario
 
+## Ferramentas
+* Typescript
+* Prisma
+* MySQL
+* Nginx
+* Redis
+* Prometheus
+
 ## Instalação
 
 Após clonar o repositorio entre dentro da pasta Employee instale as dependencias 
@@ -27,13 +35,6 @@ Após instalar as dependencias retorne ao diretorio raiz e suba os containers
 ```bash
   docker-compose up -d --build 
 ```
-## Ferramentas
-* Typescript
-* Prisma
-* MySQL
-* Nginx
-* Redis
-* Prometheus
 
 ## Operações Basicas
 

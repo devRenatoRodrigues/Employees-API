@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node -r ts-node/register src/server.ts",
     "dev": "npm run generate && nodemon src/server.ts",
+    "migrate": "npx prisma migrate dev --name start",
     "generate": "npx prisma generate"
   },
   "keywords": [],

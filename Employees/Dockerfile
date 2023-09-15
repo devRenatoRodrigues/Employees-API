@@ -11,8 +11,6 @@ COPY . .
 
 RUN npm run generate
 
-RUN npm run migrate
-
 EXPOSE 3000
 
 ENTRYPOINT [ "npm", "start" ]

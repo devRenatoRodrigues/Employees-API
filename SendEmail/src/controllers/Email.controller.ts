@@ -9,10 +9,11 @@ export default class EmailController {
     ) { }
 
     async sendEmailToAllEmployees(req: Request, res: Response): Promise<Response> {
+        console.time()
         const { ids, message } = req.body
-        console.log('control', ids, message);
         
         const serviceResponse = await this._emailService.sendEmailToAllEmployees(ids, message)
+        console.timeEnd()
         return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
     }
 }
